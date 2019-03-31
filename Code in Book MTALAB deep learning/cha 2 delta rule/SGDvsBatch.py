@@ -2,6 +2,7 @@ from DeltaSGD import *
 from DeltaBatch import *
 from Sigmoid import *
 import matplotlib.pyplot as plt
+# from matplotlib import pyplot as plt
 
 
 X = np.array([[0, 0, 1],
