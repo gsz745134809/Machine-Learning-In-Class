@@ -1,6 +1,8 @@
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.preprocessing import MinMaxScaler, StandardScaler, Imputer
+from sklearn.feature_selection import VarianceThreshold
+from sklearn.decomposition import PCA
 import jieba
 import numpy as np
 
@@ -157,6 +159,33 @@ def im():
 #  [7. 6.]]
     
 
+def var():
+    """
+    特征选择 - 删除低方差的特征
+    """
+    var = VarianceThreshold(threshold=0.0)  # 删除 方差为 0.0 的特征
+
+    data = var.fit_transform([[0, 2, 0, 3], [0, 1, 4, 3], [0, 1, 1, 3]])
+
+    print(data)
+# [[1. 2.]
+#  [4. 3.]
+#  [7. 6.]]
+
+
+def pca():
+    """
+    主成分分析进行特征降维
+    """
+    pca = PCA(n_components=0.9)  # 保留 90% 特征
+
+    data = pca.fit_transform([[2, 8, 4, 5], [6, 3, 0, 8], [5, 4, 9, 1]])
+
+    print(data)
+# [[ 1.22879107e-15  3.82970843e+00]
+#  [ 5.74456265e+00 -1.91485422e+00]
+#  [-5.74456265e+00 -1.91485422e+00]]
+
 if __name__ == "__main__":
     # dictvec()
     # countvec()
@@ -169,7 +198,9 @@ if __name__ == "__main__":
 
     # stand()
 
-    im()
+    # im()
+
+    pca()
 
 
 

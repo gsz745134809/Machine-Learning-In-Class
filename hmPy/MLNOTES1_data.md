@@ -267,7 +267,7 @@ Imputer语法
 
 
 
-主要方法（三大武器）：
+#### 主要方法（三大武器）：
 
 + <font color=red>Filter（过滤式）：VarianceThreshold</font>
 + <font color=red>Embedded（嵌入式）：正则化、决策树</font>
@@ -294,4 +294,47 @@ VarianceThreshold(threshold=0.0)
 
 
 ### 2、主成分分析
+
+
+
+sklearn主成分分析API：
+
++ sklearn.<font color=red>decomposition</font>
+
+
+
+#### PCA是什么：
+
+本质：PCA是一种分析、简化数据集的技术
+
+目的：是数据维数压缩，尽可能降低原数据的维数（复杂度），<font color=red>损失少量信息</font>。
+
+<font color=red>作用：可以削减回归分析或者聚类分析中特征的数量</font>
+
+
+
+
+
+PCA：特征数量达到上百的时候--》考虑数据的简化
+
+数据也会改变
+
+
+
+
+
+高维度数据容易出现的问题：
+
++ 特征之间通常是<font color=red>相关的</font>
+
+
+
+
+
+#### PCA语法：
+
++ PCA(n_components=None)
+  + 将数据分解为较低维数空间
+
+
 
