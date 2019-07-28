@@ -74,17 +74,54 @@ sklearn.datasets.load_digits() 加载并返回数字数据集
 
 
 
-
-
-
-
-
-
-
-
 4、sklearn回归数据集
 
++ sklearn.datasets.load_boston()
++ sklearn.datasets.load_diabetes()
 
+
+
+
+
+
+
+### 转换器与预估器
+
+之前做的特征工程步骤：
+
+1、实例化（实例化的是一个<font color=red>转换器类（Transformer）</font>）
+
+2、调用fit_transform（对于文档建立分类词频矩阵，不能同时调用）
+
+
+
+估计器：
+
+在sklearn中，估计器（estimator）是一个重要的角色，<font color=red>是一类实现了算法的API</font>。
+
+1、用于分类的估计器
+
++ sklearn.neighbors    --    k-近邻算法
++ sklearn.naive_bayes    --    贝叶斯
++ sklearn.linear_model.LogisticRegression    --    逻辑回归
++ sklearn.tree    --    决策树与随机森林
+
+2、用于回归的估计器：
+
++ sklearn.linear_model.LinearRegression    --    线性回归
++ sklearn.linear_model.Ridge    --    岭回归
+
+
+
+使用估计器：
+
+1、调用fit(x_train, y_train)
+
+2、输入测试集的数据
+
+​		1、y_predict = predict(x_test)
+
+​		2、预测的准确率  score(x_test, y_test)
 
 
 
